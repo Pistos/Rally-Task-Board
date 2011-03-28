@@ -168,7 +168,12 @@
                     });
                     html.push('<div class="state">' + state.display(false, value.ScheduleState=='Accepted') + '</div>');
 
-                    html.push('<div class="id"><a href="/slm/detail/ar/' + value.ObjectID + '" target="story-window">' + value.FormattedID + '</a></div>');
+                    var regexp = /^DE/;
+                    var detail_type = 'ar';
+                    if( regexp.test( value.FormattedID ) ) {
+                        detail_type = 'df';
+                    }
+                    html.push('<div class="id"><a href="/slm/detail/' + detail_type + '/' + value.ObjectID + '" target="story-window">' + value.FormattedID + '</a></div>');
                     html.push('<div class="name">' + RALLY.toolkit.niceSubstring(value.Name, 100) + '</div>');
                     html.push('<div class="' + ownerClass.join(' ') + '">' + owner + '</div>');
 
