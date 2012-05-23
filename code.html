@@ -184,7 +184,7 @@
                     }
 
                     html.push('<div class="clear"></div>');
-                    html.push('<a href="/slm/tk/create.sp?storyCardOid=' + (2 + value.ObjectID) + '" target="task-window">add task</a>');
+                    html.push('<a href="/slm/tk/new.sp?cpoi=' + __PROJECT_OID__  + 'd&itemIndex=0&projectScopeUp=false&projectScopeDown=true&workProduct=' + value.ObjectID + '" target="task-window">add task</a>');
                     html.push('</div>');
 
                     container.innerHTML = html.join('');
